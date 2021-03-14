@@ -1,0 +1,23 @@
+{
+  "dependencies": {
+    "testcafe": "^1.11.0"
+  },
+  "name": "automation-workshop",
+  "description": "",
+  "version": "1.0.0",
+  "main": "index.js",
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jricardodeleon/test-cafe-wize.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jricardodeleon/test-cafe-wize/issues"
+  },
+  "homepage": "https://github.com/jricardodeleon/test-cafe-wize#readme"
+}
