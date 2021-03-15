@@ -8,7 +8,8 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "test:chrome": "testcafe chrome ./test/",
+    "test:chromeLogin": "testcafe chrome ./test/LoginTest.js",
+    "test:chromeShop": "testcafe chrome ./test/ShoppingCartTest.js",
     "test:safari": "testcafe safari ./test/"
   },
   "repository": {
