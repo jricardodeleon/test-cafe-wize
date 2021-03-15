@@ -1,14 +1,15 @@
 {
   "dependencies": {
+    "dotenv": "^8.2.0",
     "testcafe": "^1.11.0"
   },
   "name": "automation-workshop",
   "description": "",
   "version": "1.0.0",
   "main": "index.js",
-  "devDependencies": {},
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test:chrome": "testcafe chrome ./test/",
+    "test:safari": "testcafe safari ./test/"
   },
   "repository": {
     "type": "git",
