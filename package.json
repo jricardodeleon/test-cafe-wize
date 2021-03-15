@@ -8,7 +8,7 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "test:chromeLogin": "testcafe chrome ./test/LoginTest.js",
+    "test:chrome": "testcafe chrome ./test/",
     "test:chromeShop": "testcafe chrome ./test/ShoppingCartTest.js",
     "test:safari": "testcafe safari ./test/"
   },

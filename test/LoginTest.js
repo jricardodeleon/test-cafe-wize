@@ -1,6 +1,7 @@
-import { t } from 'testcafe'
+import { Selector } from 'testcafe'
 import { CREDENTIALS } from '../data/constants' 
 import LoginPage from '../pages/LoginPage'
+import  { regularAccUser } from '../Roles/UserRoles'
 
 fixture `Test Valid e Invalid Scenarios For Login`
     .page `https://www.saucedemo.com/`
@@ -10,9 +11,12 @@ fixture `Test Valid e Invalid Scenarios For Login`
     })
         
 
-test('1. Login With Valid Credentials', async t=>{
-    await LoginPage.validLogin(CREDENTIALS.VALID_LOGIN.USERNAME, CREDENTIALS.VALID_LOGIN.PASSWORD)
-    await t.expect(LoginPage.productosLabel.exists).ok()
+test('1. Login With Valid Credentials, BONUS Usage of ROLES', async t=>{
+   //await LoginPage.validLogin(CREDENTIALS.VALID_LOGIN.USERNAME, CREDENTIALS.VALID_LOGIN.PASSWORD)
+   await t
+        .setTestSpeed(.01)
+        .useRole(regularAccUser) 
+       await t.expect(LoginPage.productosLabel.exists).ok()
 })
 
 test('2. Login With Invalid Credentials', async t=>{

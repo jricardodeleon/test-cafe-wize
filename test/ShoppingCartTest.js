@@ -22,8 +22,10 @@ test('5. Add a Single Item To The Shopping Cart', async t=>{
 
 })
 
-test.only('6. Add Multiple Items To The Shopping Cart', async t=>{
+test('6. Add Multiple Items To The Shopping Cart', async t=>{
     const numofitems = 2
     await ShoppingCartPage.addMultipleItems(numofitems)
     await t.expect(ShoppingCartPage.itemInCart.innerText).eql(numofitems.toString())
 })
+
+

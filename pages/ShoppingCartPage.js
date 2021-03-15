@@ -9,7 +9,7 @@ class ShoppingCartPage{
         this.itemInCart = Selector('.fa-layers-counter')
         this.itemList = Selector('.inventory_item').child('.pricebar').child('.btn_primary')
         this.itemCount = this.itemList.count
-        
+        this.checkoutBtn = Selector('.btn_action')   
     }
 
     async canNavigateToCart(){
@@ -38,6 +38,7 @@ class ShoppingCartPage{
             }  
         }
     }
+
 }
 
 export default new ShoppingCartPage()
