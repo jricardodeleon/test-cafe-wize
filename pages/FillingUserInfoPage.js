@@ -6,7 +6,7 @@ class FillingUserInfoPage{
         this.lastName = Selector('#last-name')
         this.zipCode = Selector('#postal-code')
         this.errorMessage = Selector('.error-button')
-        this.continueBtn = Selector('.btn_primary').value('CONTINUE')
+        this.continueBtn = Selector('.btn_primary')
         this.checkoutTitle = Selector('.subheader').withExactText('Checkout: Your Information')
     }
     
