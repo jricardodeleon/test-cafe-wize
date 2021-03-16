@@ -15,6 +15,8 @@ fixture `Mail Information`
         await t.expect(LoginPage.productosLabel.exists).ok()
         // Select Items
         const numofitems = 4
+        var itemProducts = []
+        itemProducts = await ShoppingCartPage.getItemNameProducts(numofitems)
         await ShoppingCartPage.addMultipleItems(numofitems)
         await t.expect(ShoppingCartPage.itemInCart.innerText).eql(numofitems.toString())
         // go to cart
@@ -25,9 +27,8 @@ fixture `Mail Information`
         .expect(FillingUserInfoPage.checkoutTitle.exists).ok()
     })
 
-    test.only('7. Continuing with Missing Information', async t=>{
+    test('7. Continuing with Missing Information', async t=>{
         await t
-            .setTestSpeed(.02)
             .typeText(FillingUserInfoPage.firstName, CREDENTIALS.VALID_CHECKOUT.USERNAME, {paste : true})
             .typeText(FillingUserInfoPage.lastName, CREDENTIALS.VALID_CHECKOUT.LASTNAME, {paste : true})
             .click(FillingUserInfoPage.continueBtn)
@@ -35,11 +36,19 @@ fixture `Mail Information`
     })
 
     test('8. Fill Users Information', async t=>{
+        await FillingUserInfoPage.fillValidInfo(CREDENTIALS.VALID_CHECKOUT.USERNAME, CREDENTIALS.VALID_CHECKOUT.LASTNAME, CREDENTIALS.VALID_CHECKOUT.ZIPCODE)
         await t
-            .setTestSpeed(.02)
-            .typeText(FillingUserInfoPage.firstName, CREDENTIALS.VALID_CHECKOUT.USERNAME, {paste : true})
-            .typeText(FillingUserInfoPage.lastName, CREDENTIALS.VALID_CHECKOUT.LASTNAME, {paste : true})
-            .typeText(FillingUserInfoPage.zipCode, CREDENTIALS.VALID_CHECKOUT.ZIPCODE, {paste : true})
-            .click(FillingUserInfoPage.continueBtn)
             .expect(CheckOverviewPage.overviewtitle.exists).ok()
+    })
+
+    test.only('9. Final Order Items', async t=>{
+        await FillingUserInfoPage.fillValidInfo(CREDENTIALS.VALID_CHECKOUT.USERNAME, CREDENTIALS.VALID_CHECKOUT.LASTNAME, CREDENTIALS.VALID_CHECKOUT.ZIPCODE)
+        // checking out Items in Cart
+        var checkoutItems = []
+        checkoutItems = await ShoppingCartPage.getItemNameinCart()
+        await t.expect(checkoutItems).eql(itemProducts).ok()
+        //console.log('checoutitems ' + checkoutItems)    
+        // checkout
+        //await t.click(ShoppingCartPage.checkoutBtn) 
+                  
     })

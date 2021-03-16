@@ -16,5 +16,9 @@ export const CREDENTIALS = {
         USERNAME : process.env.VALID_USERNAME,
         LASTNAME : process.env.VALID_LASTNAME,
         ZIPCODE : process.env.VALID_ZIPCODE
+    },
+
+    INVALID_CHECKOUT : {
+        ZIPCODE : process.env.INVALID_ZIPCODE
     }
 }

@@ -10,6 +10,13 @@ class FillingUserInfoPage{
         this.checkoutTitle = Selector('.subheader').withExactText('Checkout: Your Information')
     }
     
+    async fillValidInfo(firstName, lastName, zipCode){
+        await t
+            .typeText(this.firstName, firstName, {paste : true})
+            .typeText(this.lastName, lastName, {paste : true})
+            .typeText(this.zipCode, zipCode, {paste : true})
+            .click(this.continueBtn)
+    }
 
 }
 

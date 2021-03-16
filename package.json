@@ -1,14 +1,15 @@
 {
   "dependencies": {
     "dotenv": "^8.2.0",
-    "testcafe": "^1.11.0"
+    "testcafe": "^1.11.0",
+    "testcafe-reporter-list": "^2.1.0"
   },
   "name": "automation-workshop",
   "description": "",
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "test:chrome": "testcafe chrome ./test/",
+    "test:chrome": "testcafe chrome ./test/ --reporter list",
     "test:chromeShop": "testcafe chrome ./test/ShoppingCartTest.js",
     "test:safari": "testcafe safari ./test/"
   },

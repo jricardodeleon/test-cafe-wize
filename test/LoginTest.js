@@ -12,6 +12,7 @@ fixture `Test Valid e Invalid Scenarios For Login`
         
 
 test('1. Login With Valid Credentials, BONUS Usage of ROLES', async t=>{
+   //await LoginPage.validLogin(CREDENTIALS.VALID_LOGIN.USERNAME, CREDENTIALS.VALID_LOGIN.PASSWORD)
    await t
         .useRole(regularAccUser) 
        await t.expect(LoginPage.productosLabel.exists).ok()
