@@ -13,18 +13,6 @@ fixture `Mail Information`
         // login with valid user
         await LoginPage.validLogin(CREDENTIALS.VALID_LOGIN.USERNAME, CREDENTIALS.VALID_LOGIN.PASSWORD)
         await t.expect(LoginPage.productosLabel.exists).ok()
-        // Select Items
-        //const numofitems = 4
-        //var itemProducts = []
-        //itemProducts = await ShoppingCartPage.getItemNameProducts(numofitems)
-        /*await ShoppingCartPage.addMultipleItems(numofitems)
-        await t.expect(ShoppingCartPage.itemInCart.innerText).eql(numofitems.toString())
-        // go to cart
-        .click(ShoppingCartPage.itemInCart)
-        // checkout
-        await t
-        .click(ShoppingCartPage.checkoutBtn)
-        .expect(FillingUserInfoPage.checkoutTitle.exists).ok()*/
     })
 
     test('7. Continuing with Missing Information', async t=>{

@@ -46,7 +46,7 @@ class ShoppingCartPage{
             .child('a')
             .child('.inventory_item_name')
 
-            console.log('itemproductcount ' + itemProduct.count)
+            // console.log('itemproductcount ' + itemProduct.count)
 
             var itemNameArray = []
             
@@ -59,7 +59,7 @@ class ShoppingCartPage{
             }
             
         } 
-        console.log('itmproduct ' + itemNameArray)
+        // console.log('itmproduct ' + itemNameArray)
         return itemNameArray
     }
 
@@ -76,7 +76,6 @@ class ShoppingCartPage{
             
             itemNameArray.push(await itemList.nth(i).innerText)
         } 
-        //console.log('itmarray ' + itemNameArray)
         return itemNameArray
   
     }
