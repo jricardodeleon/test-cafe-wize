@@ -10,6 +10,7 @@
   "main": "index.js",
   "scripts": {
     "test:chrome": "testcafe chrome ./test/ --reporter list",
+    "test:chrome:5": "testcafe -c 5 chrome ./test --reporter list -s takeOnFails=true",
     "test:safari": "testcafe safari ./test/ --reporter list"
   },
   "repository": {

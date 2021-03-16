@@ -56,7 +56,7 @@ fixture `Mail Information`
             .expect(CheckOverviewPage.overviewtitle.exists).ok()
     })
 
-    test.only('9. Final Order Items, 10. Complete a Purcharse', async t=>{
+    test('9. Final Order Items, 10. Complete a Purcharse', async t=>{
         const numofitems = 4
         var itemProducts = []
         // get what products were selected
